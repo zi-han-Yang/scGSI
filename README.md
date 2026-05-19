@@ -73,7 +73,7 @@ scGSI/
 │   ├── utils.py         # Utility functions
 │   └── main.py          # Main training script
 ├── config/              # Configuration files for different datasets
-│   └── BMMC_s1d1.yaml
+│   └── Tea_PBMC.yaml
 ├── data/                # Data loading scripts
 ├── eva/                 # Evaluation scripts
 ├── vis/                 # Visualization scripts
