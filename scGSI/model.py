@@ -11,8 +11,10 @@ from scGSI.layers import (
     GATv2Encoder,
     STEncoder,
     MLPDecoder,
+    Projection_head,
     CrossAttentionFusion
 )
+
 from scGSI.losses import (x_recoLoss,
                            y_recoLoss,
                            ContrastiveLoss,
@@ -25,7 +27,7 @@ from scGSI.utils import (get_marginals,
 from scGSI.preprocess import normalize_data
 
 
-class scGSi(nn.Module):
+class scGSI(nn.Module):
 
     def __init__(self,
                  data,
@@ -36,7 +38,7 @@ class scGSi(nn.Module):
                  cell_num,
                  dropout  # to  0.3
                  ):
-        super(scGSi, self).__init__()
+        super(scGSI, self).__init__()
 
         self.gene_dim = gene_dim
         self.peak_dim = peak_dim
@@ -81,6 +83,7 @@ class scGSi(nn.Module):
         #     hidden_dim=hidden_dim,
         #     feature_dim=st_gene_dim,
         #     dropout=dropout)
+        self.projection_head = Projection_head(latent_dim, latent_dim)
         # 新地融合模块
         self.fusion_module = CrossAttentionFusion(latent_dim, dropout=dropout)
 
@@ -101,9 +104,12 @@ class scGSi(nn.Module):
         z_rna = self.RNA_encoder(rna, rna_edge_index)
         z_atac = self.ATAC_encoder(atac, atac_edge_index)
 
-        cos_loss = self.Cosine_align_loss(z_rna, z_atac)
+        pro_z_rna = self.projection_head_rna(z_rna)
+        pro_z_atac = self.projection_head_atac(z_atac)
 
-        z_rna_fused, z_atac_fused = self.fusion_module(z_rna, z_atac)
+        cos_loss = self.Cosine_align_loss(pro_z_rna, pro_z_atac)
+
+        z_rna_fused, z_atac_fused = self.fusion_module(pro_z_rna, pro_z_atac)
 
         contra_loss = self.ContrastiveLoss(z_rna_fused, z_atac_fused)
 
@@ -130,7 +136,7 @@ class scGSi(nn.Module):
         return total_loss, loss_dict, z_joint, reco_data
 
 
-class scGSi_learning(torch.nn.Module):
+class scGSI_learning(torch.nn.Module):
 
     def __init__(self, model, x_raw, y_raw, k_neighbors, k_clusters,
                  learning_rate, weight_decay,
@@ -330,10 +336,10 @@ def get_embedding(data, graph_x, graph_y, data_id, model_path, model, cell_num, 
                                                marginals_mode="uniform",
                                                graph_mode="distance")
         inte = [z_joint[:cell_num[0]], z_joint[cell_num[0]:]]
-        scGSi_inte = dict({"inte": inte})
+        scGSI_inte = dict({"inte": inte})
 
-        path = 'E:/experiment/scGSi_备份/results/' + data_id
+        path = 'E:/experiment/scGSI/results/' + data_id
         if not os.path.exists(path):
             os.makedirs(path)
 
-        np.save(os.path.join(path, 'scGSi.npy'), scGSi_inte)
+        np.save(os.path.join(path, 'scGSI.npy'), scGSI_inte)
