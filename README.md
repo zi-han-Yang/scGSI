@@ -170,7 +170,7 @@ This work was supported by the National Natural Science Foundation of China unde
 If you use **scGSI** in your research, including its source code, model, methodology, data-processing pipeline, evaluation scripts, visualization scripts, or other materials associated with this project, please cite our paper.
 
 ```bash 
-Chen X, Yang Z, Liu X, Xie Z, Guo W (2026) scGSI: Graph-guided self-supervised integration of paired single-cell multi-omics. *PLoS Computational Biology* 22(9): e1014773. https://doi.org/10.1371/journal.pcbi.1014773
+Chen X, Yang Z, Liu X, Xie Z, Guo W (2026) scGSI: Graph-guided self-supervised integration of paired single-cell multi-omics. PLoS Computational Biology 22(9): e1014773. https://doi.org/10.1371/journal.pcbi.1014773
 ```
 
 ### BibTeX
@@ -190,7 +190,9 @@ Chen X, Yang Z, Liu X, Xie Z, Guo W (2026) scGSI: Graph-guided self-supervised i
 
 For publications, presentations, benchmarks, or other academic work based on scGSI, we kindly ask you to include the citation above to acknowledge the original work.
 
-**Copyright:** © 2026 Chen et al. This is an open access article distributed under the terms of the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
+### Copyright
+
+© 2026 Chen et al. This is an open access article distributed under the terms of the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
 
 ## Contact
 
