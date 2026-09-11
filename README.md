@@ -161,11 +161,17 @@ cd vis
 python visual_Tea_PBMC.py  # Replace with your dataset name
 ```
 
+## Funding
+
+This work was supported by the National Natural Science Foundation of China under Grant No. 62202162 (awarded to X.C.). The funders had no role in study design, data collection and analysis, decision to publish, or preparation of the manuscript. The other authors received no specific funding for this work.
+
 ## Citation
 
 If you use **scGSI** in your research, including its source code, model, methodology, data-processing pipeline, evaluation scripts, visualization scripts, or other materials associated with this project, please cite our paper.
 
-**Citation:** Chen X, Yang Z, Liu X, Xie Z, Guo W (2026) scGSI: Graph-guided self-supervised integration of paired single-cell multi-omics. *PLoS Computational Biology* 22(9): e1014773. https://doi.org/10.1371/journal.pcbi.1014773
+```bash 
+Chen X, Yang Z, Liu X, Xie Z, Guo W (2026) scGSI: Graph-guided self-supervised integration of paired single-cell multi-omics. *PLoS Computational Biology* 22(9): e1014773. https://doi.org/10.1371/journal.pcbi.1014773
+```
 
 ### BibTeX
 
@@ -186,15 +192,11 @@ For publications, presentations, benchmarks, or other academic work based on scG
 
 **Copyright:** © 2026 Chen et al. This is an open access article distributed under the terms of the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
 
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
 ## Contact
 
 For questions or issues, please open an issue on GitHub or contact the authors.
 
-## Acknowledgments
+## License
 
-We thank the developers of the comparison methods and the single-cell genomics community for their valuable contributions.
+This project is licensed under the MIT License - see the LICENSE file for details.
 
