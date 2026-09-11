@@ -15,7 +15,7 @@ This repository contains the implementation of scGSI along with comprehensive ev
 The overall architecture of scGSI is illustrated in the framework diagram below:
 
 <div align="center">
-  <img src="fig-framework.png" alt="scMGPF Framework" width="800"/>
+  <img src="fig-framework.png" alt="scGSI Framework" width="800"/>
 </div>
 
 
@@ -163,7 +163,28 @@ python visual_Tea_PBMC.py  # Replace with your dataset name
 
 ## Citation
 
-If you use scGSI in your research, please cite our paper. Citation information will be updated upon publication.
+If you use **scGSI** in your research, including its source code, model, methodology, data-processing pipeline, evaluation scripts, visualization scripts, or other materials associated with this project, please cite our paper.
+
+**Citation:** Chen X, Yang Z, Liu X, Xie Z, Guo W (2026) scGSI: Graph-guided self-supervised integration of paired single-cell multi-omics. *PLoS Computational Biology* 22(9): e1014773. https://doi.org/10.1371/journal.pcbi.1014773
+
+### BibTeX
+
+```bibtex
+@article{chen2026scgsi,
+  title   = {scGSI: Graph-guided self-supervised integration of paired single-cell multi-omics},
+  author  = {Chen, Xiang and Yang, Zihan and Liu, Xiaoyu and Xie, Zhiyi and Guo, Wenlu},
+  journal = {PLOS Computational Biology},
+  volume  = {22},
+  number  = {9},
+  pages   = {e1014773},
+  year    = {2026},
+  doi     = {10.1371/journal.pcbi.1014773}
+}
+```
+
+For publications, presentations, benchmarks, or other academic work based on scGSI, we kindly ask you to include the citation above to acknowledge the original work.
+
+**Copyright:** © 2026 Chen et al. This is an open access article distributed under the terms of the [Creative Commons Attribution License](http://creativecommons.org/licenses/by/4.0/), which permits unrestricted use, distribution, and reproduction in any medium, provided the original author and source are credited.
 
 ## License
 
